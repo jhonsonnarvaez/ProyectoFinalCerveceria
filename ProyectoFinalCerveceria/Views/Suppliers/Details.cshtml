@@ -4,10 +4,9 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Datos del Proveedor</h2>
 
 <div>
-    <h4>Supplier</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -45,6 +44,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.SupplierId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SupplierId }, new { @class = "btn btn-info glyphicon glyphicon-pencil" }) |
+    @Html.ActionLink(" Regresar", "Index", new { area = "" }, new { @class = "btn btn-success glyphicon glyphicon-fast-backward" })
 </p>

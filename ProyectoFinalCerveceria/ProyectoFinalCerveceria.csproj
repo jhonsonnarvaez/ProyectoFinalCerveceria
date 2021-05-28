@@ -217,6 +217,7 @@
     <Content Include="img\market-1.jpg" />
     <Content Include="img\market-2.jpg" />
     <Content Include="img\market-3.jpg" />
+    <Content Include="img\nuestrosProductos.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -295,6 +296,7 @@
     <Content Include="Views\Shared\_CaruselPartial.cshtml" />
     <Content Include="Views\Shared\_ServicePartial.cshtml" />
     <Content Include="Views\Shared\_MarketPartial.cshtml" />
+    <Content Include="Views\Products\CatalogProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

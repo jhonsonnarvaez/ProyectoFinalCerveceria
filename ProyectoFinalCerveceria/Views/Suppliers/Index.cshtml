@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Proveedores</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nuevo", "Create", new { area = "" }, new { @class = "btn btn-primary glyphicon glyphicon-file" })
 </p>
 <table class="table">
     <tr>
@@ -41,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.CompanyPhoneNumber)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.SupplierId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.SupplierId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.SupplierId })
+            @Html.ActionLink(" ", "Edit", new { id=item.SupplierId }, new { @class = "btn btn-info glyphicon glyphicon-pencil" }) |
+            @Html.ActionLink(" ", "Details", new { id=item.SupplierId }, new { @class = "btn btn-success glyphicon glyphicon-list" }) |
+            @Html.ActionLink(" ", "Delete", new { id=item.SupplierId }, new { @class = "btn btn-danger glyphicon glyphicon-trash" })
         </td>
     </tr>
 }

@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using ProyectoFinalCerveceria.Data;
 using ProyectoFinalCerveceria.Models;
@@ -17,6 +18,11 @@ namespace ProyectoFinalCerveceria.Controllers
 
         // GET: Products
         public ActionResult Index()
+        {
+            return View(db.Products.ToList());
+        }
+
+        public ActionResult CatalogProduct()
         {
             return View(db.Products.ToList());
         }
@@ -47,8 +53,11 @@ namespace ProyectoFinalCerveceria.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProductId,ProductCode,ProductName,Price,Stock")] Product product)
+        public ActionResult Create([Bind(Include = "ProductId,ProductCode,ProductName,Price,Stock,Image")] Product product)
         {
+            HttpPostedFileBase http = Request.Files[0];
+            WebImage webImage = new WebImage(http.InputStream);
+            product.Image = webImage.GetBytes();
             if (ModelState.IsValid)
             {
                 db.Products.Add(product);
@@ -79,8 +88,11 @@ namespace ProyectoFinalCerveceria.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProductId,ProductCode,ProductName,Price,Stock")] Product product)
+        public ActionResult Edit([Bind(Include = "ProductId,ProductCode,ProductName,Price,Stock,Image")] Product product)
         {
+            HttpPostedFileBase http = Request.Files[0];
+            WebImage webImage = new WebImage(http.InputStream);
+            product.Image = webImage.GetBytes();
             if (ModelState.IsValid)
             {
                 db.Entry(product).State = EntityState.Modified;

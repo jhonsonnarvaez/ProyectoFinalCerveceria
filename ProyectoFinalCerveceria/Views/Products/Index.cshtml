@@ -7,7 +7,7 @@
     <h2>Catálogo de Productos</h2>
 
     <p>
-      @Html.ActionLink("Nuevo", "Create", new { area = "" }, new { @class = "btn btn-primary glyphicon glyphicon-file" })
+        @Html.ActionLink("Nuevo", "Create", new { area = "" }, new { @class = "btn btn-primary glyphicon glyphicon-file" })
     </p>
     <table class="table">
         <tr>
@@ -28,25 +28,25 @@
 
         @foreach (var item in Model)
         {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProductCode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProductName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Stock)
-        </td>
-        <td>
-            @Html.ActionLink(" ", "Edit", new { id = item.ProductId }, new { @class = "btn btn-info glyphicon glyphicon-pencil" }) |
-            @Html.ActionLink(" ", "Details", new { id = item.ProductId }, new { @class = "btn btn-success glyphicon glyphicon-th-list" }) |
-            @Html.ActionLink(" ", "Delete", new { id = item.ProductId }, new { @class = "btn btn-danger glyphicon glyphicon-trash" })
-        </td>
-    </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Stock)
+                </td>
+                <td>
+                    @Html.ActionLink(" ", "Edit", new { id = item.ProductId }, new { @class = "btn btn-info glyphicon glyphicon-pencil" }) |
+                    @Html.ActionLink(" ", "Details", new { id = item.ProductId }, new { @class = "btn btn-success glyphicon glyphicon-list" }) |
+                    @Html.ActionLink(" ", "Delete", new { id = item.ProductId }, new { @class = "btn btn-danger glyphicon glyphicon-trash" })
+                </td>
+            </tr>
         }
 
     </table>

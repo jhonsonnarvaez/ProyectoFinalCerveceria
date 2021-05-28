@@ -7,7 +7,7 @@
 <h3>@ViewBag.Error</h3>
 <h3>@ViewBag.Message</h3>
 
-@using (Html.BeginForm("NewOrder","Orders",FormMethod.Post))
+@using (Html.BeginForm("NewOrder", "Orders", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
@@ -44,8 +44,8 @@
         </th>
         <th></th>
     </tr>
-    @for(int i = 0;i<Model.Products.Count; i++)
-            {
+    @for (int i = 0; i < Model.Products.Count; i++)
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => Model.Products[i].ProductName)
@@ -60,8 +60,8 @@
                 @Html.DisplayFor(modelItem => Model.Products[i].Value)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = Model.Products[i].ProductId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = Model.Products[i].ProductId })
+                @Html.ActionLink(" ", "Edit", new { id = Model.Products[i].ProductId }, new { @class = "btn btn-info glyphicon glyphicon-pencil" }) |
+                @Html.ActionLink(" ", "Delete", new { id = Model.Products[i].ProductId }, new { @class = "btn btn-danger glyphicon glyphicon-trash" })
             </td>
         </tr>
     }

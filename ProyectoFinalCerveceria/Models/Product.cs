@@ -18,6 +18,8 @@ namespace ProyectoFinalCerveceria.Models
         [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = false)]
         public float Stock { get; set; }
 
+        public byte[] Image { get; set; }
+
         public virtual ICollection<SupplierProduct> SupplierProducts { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
