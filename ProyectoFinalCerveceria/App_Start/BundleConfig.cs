@@ -24,6 +24,7 @@ namespace ProyectoFinalCerveceria
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/carousel.css",
                       "~/Content/site.css"));
         }
     }
